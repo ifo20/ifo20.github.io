@@ -110,6 +110,10 @@
 			var score = 0;
 			var scoreText;
 			scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+			this.physics.add.collider(player, platforms);
+			this.physics.add.collider(stars, platforms);
+
+			this.physics.add.overlap(player, stars, collectStar, null, this);
 		}
 		function update() {
 			if (cursors.left.isDown)
